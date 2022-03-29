@@ -13,6 +13,7 @@ import com.example.paymentgateway.exceptions.PermissionDeniedException;
 import com.example.paymentgateway.exceptions.TransactionNotFoundException;
 import com.example.paymentgateway.service.PaymentService;
 import com.example.paymentgateway.service.PaymentServiceImpl;
+import com.example.paymentgateway.service.TextEncryptorCustom;
 import com.example.paymentgateway.service.ValidatorRequest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,7 +23,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.encrypt.TextEncryptor;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.util.LinkedHashMap;
@@ -34,17 +34,17 @@ import static org.assertj.core.api.BDDAssertions.then;
 @SpringBootTest
 @ActiveProfiles("test")
 class PaymentGatewayApplicationTests {
-    private PaymentService paymentService;
+    private static PaymentService paymentService;
     private final PaymentRepository paymentRepository;
     private final ValidatorRequest validatorRequest;
+    private final TextEncryptorCustom encryptor;
     private final ModelMapper modelMapper;
-    private final TextEncryptor encryptor;
     @Value("${salt.value}") private String salt;
     @Value("${pathFile.value}") private String pathFile;
     RequestDto wrongRequestDto;
 
     @Autowired
-    PaymentGatewayApplicationTests(PaymentRepository paymentRepository, ValidatorRequest validatorRequest, ModelMapper modelMapper, TextEncryptor encryptor) {
+    PaymentGatewayApplicationTests(PaymentRepository paymentRepository, ValidatorRequest validatorRequest, ModelMapper modelMapper, TextEncryptorCustom encryptor) {
         this.paymentRepository = paymentRepository;
         this.validatorRequest = validatorRequest;
         this.modelMapper = modelMapper;
@@ -53,7 +53,7 @@ class PaymentGatewayApplicationTests {
 
     @BeforeEach
     public void setUp() {
-        paymentService = new PaymentServiceImpl(paymentRepository, validatorRequest, modelMapper, encryptor, salt, pathFile);
+        paymentService = new PaymentServiceImpl(paymentRepository, validatorRequest, encryptor, modelMapper, salt, pathFile);
         wrongRequestDto = new RequestDto(999, 11, Currency.EUR, new Cardholder("John", "seroleg7@gmailcom"), new Card("454671", "03/5", "123"));
 
 
@@ -130,5 +130,6 @@ class PaymentGatewayApplicationTests {
                 paymentService.retrieveTransaction(invoice, new Cardholder("Olga", "seroleg7@gmail.com")));
         Assertions.assertEquals("Transaction #"+invoice+" not found", thrown.getMessage());
     }
+
 
 }
