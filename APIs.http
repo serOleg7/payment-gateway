@@ -1,0 +1,63 @@
+### Submit payment /accepted
+POST http://localhost:8080/payment/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "invoice": "234573",
+  "amount" : "11",
+  "currency": "USD",
+  "cardholder": {
+    "name": "John",
+    "email": "123@123.om"
+  },
+  "card":{
+    "pan": "4561261212345467",
+    "expiry": "03/22",
+    "cvv": "123"
+  }
+}
+
+### Submit payment/not accepted
+POST http://localhost:8080/payment/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "currency": "usd",
+  "cardholder": {
+  },
+  "card":{
+  }
+}
+
+
+### Get transaction /correct request
+GET http://localhost:8080/payment/234573/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "John",
+  "email": "123@123.om"
+}
+
+### Get transaction /Forbidden
+GET http://localhost:8080/payment/234573/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Peter",
+  "email": "123@123.om"
+}
+
+### Get transaction /Not found
+GET http://localhost:8080/payment/987987/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Peter",
+  "email": "123@123.om"
+}

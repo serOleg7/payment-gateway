@@ -1,0 +1,93 @@
+[
+{
+  "invoice": 2,
+  "amount": 11,
+  "currency": "EUR",
+  "cardholder": {
+    "name": "b69d2af46d8fbb5d433bb1c1ac76c945c443d4522082b3d92ad65906176bdf9e",
+    "email": "seroleg7@gmail.com"
+  },
+  "card": {
+    "pan": "1b676d0189811faab146bc7f4f44d3740e20b81e82c97188e66c1f15e534240c1feb465c8d7ef4e37a45306fea1b123b",
+    "expiry": "aee7f6b221a17066edbc4fa388c130eb0afd6649373ce62bc43b3079a3b9d07c"
+  },
+  "date": "Mar 29, 2022, 9:07:20 AM"
+},
+{
+  "invoice": 2,
+  "amount": 11,
+  "currency": "EUR",
+  "cardholder": {
+    "name": "2df1a42a200d86a0357c25ced1f7189f81e70f0f93fafd3700e8308ace793f02",
+    "email": "seroleg7@gmail.com"
+  },
+  "card": {
+    "pan": "57a5ea6b62287a38ba1667aed658f0d8d1fa5c65c43da6ea824d8b8ac3e740d3df971c184e4a4f93537ea8eca206aa42",
+    "expiry": "37825e82d31d63869df47ca6c3e36ded1228883bc677232d870f374f45ef4707"
+  },
+  "date": "Mar 29, 2022, 9:07:20 AM",
+  "errors": {
+    "invoice": "Incorrect invoice"
+  }
+},
+{
+  "invoice": 999,
+  "amount": 11,
+  "currency": "EUR",
+  "cardholder": {
+    "name": "4d7b01906a03c88b868abc268533f78cd83a1083a90aac1068b245ce3308110c",
+    "email": "seroleg7@gmailcom"
+  },
+  "card": {
+    "pan": "72ec289dcdc6298d82ca8ad5ef3eb57fe886e00dec27bea69e4241d7728148f6",
+    "expiry": "db029bc0c220b99073b1546125b69b4eb34f13a414822140985e36d63c94f10c"
+  },
+  "date": "Mar 29, 2022, 9:07:20 AM",
+  "errors": {
+    "email": "Invalid cardholder email format",
+    "pan": "Incorrect pan or not provided",
+    "expiry": "Payment card is expired or wrong"
+  }
+},
+{
+  "invoice": 4,
+  "amount": 11,
+  "currency": "EUR",
+  "cardholder": {
+    "name": "52af3a565ee53efb9cd393784934b7da43079f810ad0384c029b39c01a70626e",
+    "email": "seroleg7@gmail.com"
+  },
+  "card": {
+    "pan": "155c6f8a672bd1e15b55270b164c4e326e26bb12293e60c99a5ce55067e3a2e40af3a52ddbfd5f3f4c41c09e418b32c9",
+    "expiry": "1bf07570ab495c046820b852c61f7940811f75d183ecf01d276c9808904e41d9"
+  },
+  "date": "Mar 29, 2022, 9:07:21 AM"
+},
+{
+  "invoice": 1,
+  "amount": 11,
+  "currency": "EUR",
+  "cardholder": {
+    "name": "e3180f8b3afa12b7d8c4c2c031d5dcd254fc1ef6ed3aa46e8baf11abc85b5661",
+    "email": "seroleg7@gmail.com"
+  },
+  "card": {
+    "pan": "578ce3f9a8626fd69ae854ed45faf3b6cb7c1d092d3d6e2185e79360384a81d906108dfadc5bcc6902766159e832fcd4",
+    "expiry": "9f0ebc5eea6a174ebb8ef9b405129577194a70b2f555b247fb5b7f3b8ac5d6f0"
+  },
+  "date": "Mar 29, 2022, 9:07:21 AM"
+},
+{
+  "invoice": 3,
+  "amount": 11,
+  "currency": "EUR",
+  "cardholder": {
+    "name": "bda908a291d242db2da22e407084bf9f91bfd711b84b67ca5ad108981a460968",
+    "email": "seroleg7@gmail.com"
+  },
+  "card": {
+    "pan": "85f2e797109c36eea2cdce508857203a1a6a47c7d982e06b8c64703f4bbb13915347626a934794b61cf811c3ca4b6c7f",
+    "expiry": "7ae4de8a8efa0708da5cc78916b3aedff333945005f11a04246e70ceb3e50533"
+  },
+  "date": "Mar 29, 2022, 9:07:21 AM"
+}]
