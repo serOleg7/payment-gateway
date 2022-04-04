@@ -13,11 +13,7 @@ Content-Type: application/json
   },
   "card":{
     "pan": "4561261212345467",
-<<<<<<< HEAD
-    "expiry": "03/22",
-=======
     "expiry": "04/22",
->>>>>>> Edited beans
     "cvv": "123"
   }
 }
